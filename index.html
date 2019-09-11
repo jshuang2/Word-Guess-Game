@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Hangman</title>
 </head>
 
 <body>
@@ -20,32 +20,34 @@
             </div>
     </div>
 
-    <div class="card-deck container text-center row">
-            <div class="card col-6 cardOne">
+    <div class="card-deck container text-center">
+        <div class="row">
+            <div class="card col-lg-6 cardOne">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Wins<br>0</h5>
+                <hr>
+                <p class="card-text">CURRENT WORD</p>
+                <p class="card-text">_ _ _ _ _ _ _ _</p>
               </div>
             </div>
 
             <div class="card cardTwo col-lg-6">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">Number of Guesses Remaining</h5>
+                <hr>
+                <p class="card-text">12</p>
               </div>
             </div>
-
-            <div class="row">
-                <div class="card cardThree col-lg-6">
-                <div class="card-body">
-                    <h5 class="card-title">Number of Guesses Remaining</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
+       
+            <div class="card cardThree col-lg-6">
+               <div class="card-body">
+                <h5 class="card-title">Letters Already Guessed</h5>
+                <p class="card-text"></p>
+                
                 </div>
             </div>
+            
+        </div>
             
     </div>
 
