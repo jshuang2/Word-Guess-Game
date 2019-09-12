@@ -16,6 +16,9 @@ document.getElementById("wordPlaceholder").innerHTML = underscore;
 var wrongGuesses = [];
 var guessesLeft = 12;
 
+//Create reset function that will set guessesLeft to 12, wrongGuesses to [], and give a new chosenWord
+
+
 //Get users guess
 document.addEventListener("keyup", function(event) {
         var letter = String.fromCharCode(event.keyCode).toLowerCase();
@@ -39,7 +42,7 @@ document.addEventListener("keyup", function(event) {
                 document.getElementById("wrongGuesses").innerHTML = wrongGuesses.toString();
                 guessesLeft = guessesLeft - 1;
                 document.getElementById("guessesLeft").innerHTML = guessesLeft;
-
+                //call reset function here
             }
         }
 
@@ -52,3 +55,4 @@ document.addEventListener("keyup", function(event) {
 
 //If right, push to right array
 //If wrong, push to wrong array
+
