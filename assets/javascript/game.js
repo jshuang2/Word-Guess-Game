@@ -19,11 +19,14 @@ var guessesLeft = 12;
 //Create reset function that will set guessesLeft to 12, wrongGuesses to [], and give a new chosenWord
 
 
+
+
 //Get users guess
 document.addEventListener("keyup", function(event) {
         var letter = String.fromCharCode(event.keyCode).toLowerCase();
         var correct = false;
         var tempWord = "";
+        //checking to see if letter guess matches any letters in chosenWord
         for (var j = 0; j <chosenWord.length; j++) {
             if (letter == chosenWord[j]) {
                 tempWord = tempWord + letter + " ";
@@ -36,18 +39,38 @@ document.addEventListener("keyup", function(event) {
         underscore = tempWord;
         document.getElementById("wordPlaceholder").innerHTML = underscore;
 
+        // *My attempt at creating a "You win" alert"
+        // if (underscore.join("") == chosenWord) {
+        //     alert("You win!");
+        // }
+        
         if (correct == false) { 
             if (wrongGuesses.includes(letter) == false) {
                 wrongGuesses.push(letter);
                 document.getElementById("wrongGuesses").innerHTML = wrongGuesses.toString();
                 guessesLeft = guessesLeft - 1;
                 document.getElementById("guessesLeft").innerHTML = guessesLeft;
-                //call reset function here
+                if (guessesLeft == 0) {
+                    alert("You lose!");
+                    // MY ATTEMPT AT CREATING A RESET FUNCTION //
+                //     function reset() {
+                //         wrongGuesses = [];
+                //         guessesLeft = 12;
+                //         chosenWord = wordGuesses[Math.floor(Math.random() * wordGuesses.length)];
+                //         for (var i = 0; i < chosenWord.length; i++) {
+                //             underscore = underscore + "_ ";
+                //         }
+                //         document.getElementById("wrongGuesses").innerHTML = wrongGuesses.toString();
+                //         document.getElementById("guessesLeft").innerHTML = guessesLeft;
+                //         document.getElementById("wordPlaceholder").innerHTML = underscore;
+                //     }
+                // }
+                
             }
         }
 
         
-}) 
+});
 
 
 
