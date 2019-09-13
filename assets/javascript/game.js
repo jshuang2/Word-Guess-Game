@@ -40,9 +40,13 @@ document.addEventListener("keyup", function(event) {
         document.getElementById("wordPlaceholder").innerHTML = underscore;
 
         // *My attempt at creating a "You win" alert"
-        // if (underscore.join("") == chosenWord) {
-        //     alert("You win!");
-        // }
+        console.log("underscore",underscore.replace(/ /g, ""));
+        console.log("chosenWord",chosenWord);
+        if (underscore.replace(/ /g, "") == chosenWord) {
+            alert("You win!");
+            console.log("You win");
+            reset();
+        }
         
         if (correct == false) { 
             if (wrongGuesses.includes(letter) == false) {
@@ -52,6 +56,7 @@ document.addEventListener("keyup", function(event) {
                 document.getElementById("guessesLeft").innerHTML = guessesLeft;
                 if (guessesLeft == 0) {
                     alert("You lose!");
+                    reset();
                     // MY ATTEMPT AT CREATING A RESET FUNCTION //
                 //     function reset() {
                 //         wrongGuesses = [];
@@ -64,13 +69,26 @@ document.addEventListener("keyup", function(event) {
                 //         document.getElementById("guessesLeft").innerHTML = guessesLeft;
                 //         document.getElementById("wordPlaceholder").innerHTML = underscore;
                 //     }
-                // }
+                }
                 
             }
         }
 
         
 });
+
+            function reset() {
+                wrongGuesses = [];
+                guessesLeft = 12;
+                underscore = "";
+                chosenWord = wordGuesses[Math.floor(Math.random() * wordGuesses.length)];
+                for (var i = 0; i < chosenWord.length; i++) {
+                    underscore = underscore + "_ ";
+                }
+                document.getElementById("wrongGuesses").innerHTML = wrongGuesses.toString();
+                document.getElementById("guessesLeft").innerHTML = guessesLeft;
+                document.getElementById("wordPlaceholder").innerHTML = underscore;
+            }
 
 
 
